@@ -1,10 +1,4 @@
 const mysql = require('mysql');
-// const {Sequelize} = require('sequelize');
-// const sequelize = new Sequelize('rgi', 'student', 'student', {
-//   host: 'localhost',
-//   dialect: 'mysql'
-// });
-
 
 var connection = mysql.createConnection({
   host: 'localhost',
