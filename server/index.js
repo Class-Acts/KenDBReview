@@ -11,17 +11,31 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/products', (req, res) => {
-  console.log('HEEELLLLOOO WOOORRLLLDDD');
-  db.getAll((err, result) => {
-    console.log(result);
-    if (err) {
-      res.writeHead(404);
-      res.end()
-    } else {
-      res.write(JSON.stringify(result));
-      res.end();
+  let products = [];
+  let query = (count) => {
+
+    return db.getAll(count)
+      .then(data => products.push(data))
+      .then(() => {
+        if (products.length === 12) {
+          // console.log('ubrivbbviebviuebviebvuiebvujebvjubhe', products);
+          res.write(JSON.stringify(products));
+          res.end();
+        }
+      })
+      .catch(err => {
+        res.writeHead(404);
+        res.end();
+      });
+
+  };
+  var nTimes = function(count, func) {
+    for (var x = 0; count > x; x++) {
+      func(x + 1);
     }
-  });
+  };
+  nTimes(12, query);
+  // console.log(products);
 
 });
 

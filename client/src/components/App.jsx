@@ -8,7 +8,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('/products')
-      .then(axiosResp => console.log(resp));
+      .then(axiosResp => console.log(axiosResp));
   }
 
   render() {
