@@ -5,7 +5,7 @@ module.exports = {
 
   getAll: (id) => {
     let queryString = `SELECT * from products WHERE id=${id}`;
-    let product = {id: '', brand: '', name: '', rating: '', price: '', description: '', photoURL: '', feature1: '', feature2: '', feature3: '', feature4: ''};
+    let product = {id: '', brand: '', name: '', rating: '', price: '', description: '', photoURL: '', features: []};
     return db.queryAsync(queryString)
       .then(resp => {
         product.id = resp[0][0].id;
@@ -18,10 +18,11 @@ module.exports = {
         let featureQuery = `SELECT * from features WHERE prod_id=${resp[0][0].id}`;
         return db.queryAsync(featureQuery)
           .then(resp => {
-            product.feature1 = resp[0][0].feature;
-            product.feature2 = resp[0][1].feature;
-            product.feature3 = resp[0][2].feature;
-            product.feature4 = resp[0][3].feature;
+            product.features[0] = resp[0][0].feature;
+            product.features[1] = resp[0][1].feature;
+            product.features[2] = resp[0][2].feature;
+            product.features[3] = resp[0][3].feature;
+            product.features[4] = resp[0][4].feature;
             return product;
           });
 

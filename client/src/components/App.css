@@ -1,0 +1,83 @@
+.description {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-style: normal;
+  letter-spacing: -.16px;
+  font-size: 16px;
+  line-height: 1.5rem;
+  margin: 3rem 1rem ;
+  font-family: Stuart,Georgia,serif;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(12,11,8,.75);
+  background-color: rgb(222, 217, 217);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.features_specs {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.features {
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  padding-left: 25px;
+  padding-right: 30px;
+}
+
+.featureTitle {
+  font-family: Stuart,Georgia,serif;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  border-top: none;
+  border-bottom: none;
+  cursor: initial;
+  margin: 0 0 1.2rem;
+}
+
+.feature {
+  color: rgba(12,11,8,.75);
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.016rem;
+  font-size: 16px;
+  line-height: 24px;
+}
+.specs {
+  grid-column-start: 2;
+}
+tr:nth-child(odd) {
+  background-color: rgb(248, 248, 248);
+}
+table {
+  margin-left: 1rem;
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+  font-size: 13px;
+}
+td, th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 4px;
+}
+td {
+  color: rgb(89, 89, 89);
+}
+.specsTitle {
+  font-family: Stuart,Georgia,serif;
+  padding-left: 1px;
+  padding: 0;
+  border-top: none;
+  border-bottom: none;
+  cursor: initial;
+  margin: 0 0 1.2rem;
+}

@@ -19,6 +19,7 @@ app.get('/products', (req, res) => {
       .then(() => {
         if (products.length === 12) {
           // console.log('ubrivbbviebviuebviebvuiebvujebvjubhe', products);
+          console.log(products);
           res.write(JSON.stringify(products));
           res.end();
         }

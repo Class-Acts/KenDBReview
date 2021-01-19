@@ -21,10 +21,11 @@ pics.get()
         description: faker.lorem.paragraph(),
         photo: pics.pictures.picUrls[randomNumber],
         features: {
-          one: faker.lorem.sentence(),
-          two: faker.lorem.sentence(),
-          three: faker.lorem.sentence(),
-          four: faker.lorem.sentence()
+          one: faker.lorem.sentences(),
+          two: faker.lorem.sentences(),
+          three: faker.lorem.sentences(),
+          four: faker.lorem.sentences(),
+          five: faker.lorem.sentences()
         }
       };
       //add each product to the productsArr
@@ -35,11 +36,11 @@ pics.get()
   })
   .then(array => {
     //iterate over the productsArr
-    for (let i = 0; i < array.length; i++) {
+    for (let product of array) {
       //temp id variable
       var productId;
       //insert statement for the products table
-      const queryString = `INSERT INTO products (brand, name, rating, price, description, photoURL) VALUES('${array[i].brand}', '${array[i].name}', '${array[i].rating}', '${array[i].price}', '${array[i].description}', '${array[i].photo}')`;
+      const queryString = `INSERT INTO products (brand, name, rating, price, description, photoURL) VALUES('${product.brand}', '${product.name}', '${product.rating}', '${product.price}', '${product.description}', '${product.photo}')`;
       //insert those properties
       db.query(queryString, [], (err, data) => {
         if (err) {
@@ -48,7 +49,7 @@ pics.get()
         //save the id of the inserted product to be used as the foriegn key in the features table to like those four features to their correct product
         productId = data.insertId;
         //inset statement for features table
-        let features = `INSERT INTO features (feature, prod_id) VALUES('${array[i].features.one}', '${Number.parseInt(productId)}'), ('${array[i].features.two}', '${Number.parseInt(productId)}'), ('${array[i].features.three}', '${Number.parseInt(productId)}'), ('${array[i].features.four}', '${Number.parseInt(productId)}')`;
+        const features = `INSERT INTO features (feature, prod_id) VALUES('${product.features.one}', '${Number.parseInt(productId)}'), ('${product.features.two}', '${Number.parseInt(productId)}'), ('${product.features.three}', '${Number.parseInt(productId)}'), ('${product.features.four}', '${Number.parseInt(productId)}'), ('${product.features.five}', '${Number.parseInt(productId)}')`;
         db.query(features, [], (err, results) => {
           if (err) {
             console.log(err);
@@ -58,6 +59,5 @@ pics.get()
         });
       });
     }
-
   })
   .catch(err => console.log(err));
