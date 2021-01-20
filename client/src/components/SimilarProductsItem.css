@@ -1,0 +1,10 @@
+.listItem {
+  display: inline;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+li img {
+  width: 100px;
+  height: 160px;
+}

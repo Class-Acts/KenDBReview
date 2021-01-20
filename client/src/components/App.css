@@ -33,6 +33,7 @@
 }
 
 .featureTitle {
+  color: rgba(12, 11, 8, 0.75);
   font-family: Stuart,Georgia,serif;
   padding-left: 10px;
   padding-bottom: 5px;
@@ -73,6 +74,7 @@ td {
   color: rgb(89, 89, 89);
 }
 .specsTitle {
+  color: rgba(12, 11, 8, 0.75);
   font-family: Stuart,Georgia,serif;
   padding-left: 1px;
   padding: 0;
