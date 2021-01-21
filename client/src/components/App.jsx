@@ -17,6 +17,7 @@ class App extends React.Component {
     };
     this.prevSlide = this.prevSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    this.handleListItemClick = this.handleListItemClick.bind(this);
   }
   componentDidMount() {
     axios.get('/products')
@@ -39,6 +40,12 @@ class App extends React.Component {
     const index = resetIndex ? 0 : this.state.currentProductIndex + 1;
     this.setState({currentProductIndex: index});
   }
+  handleListItemClick(e) {
+    e.persist();
+    const des = e.target.attributes.description.nodeValue;
+    const feat = e.target.attributes.features.nodeValue.split(',');
+    this.setState({description: des, features: feat});
+  }
 
   render() {
     const index = this.state.currentProductIndex;
@@ -53,7 +60,7 @@ class App extends React.Component {
           <Features features={this.state.features} style={css}/>
           <TechSpecs specs={this.state.specs} style={css}/>
         </div>
-        <SimilarProducts products={firstSixProducts} prevSlide={this.prevSlide} nextSlide={this.nextSlide}/>
+        <SimilarProducts products={firstSixProducts} prevSlide={this.prevSlide} nextSlide={this.nextSlide} handleListItemClick={this.handleListItemClick}/>
       </div>
     );
   }
