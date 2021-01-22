@@ -36,18 +36,15 @@ class Model {
   }
   insert(product) {
     const queryString = `INSERT INTO products (brand, name, rating, price, description, photoURL) VALUES('${product.brand}', '${product.name}', '${product.rating}', '${product.price}', '${product.description}', '${product.photo}')`;
-    console.log('HHHEEEEYYYYYY PPPRRROOODDDSS');
     return db.queryAsync(queryString);
   }
   insertFeatures(obj, id) {
     const features = `INSERT INTO features (feature, prod_id) VALUES('${obj.one}', '${Number.parseInt(id)}'), ('${obj.two}', '${Number.parseInt(id)}'), ('${obj.three}', '${Number.parseInt(id)}'), ('${obj.four}', '${Number.parseInt(id)}'), ('${obj.five}', '${Number.parseInt(id)}')`;
-    console.log('YYYEEEESSSS FEATS');
     return db.queryAsync(features);
   }
 
   insertBackpacks(item) {
     const backpackQuery = `INSERT INTO backpacks (photoURL) VALUES('${item}')`;
-    console.log('AAAAYYYYYOOOOOOOOOO');
     return db.queryAsync(backpackQuery);
   }
 

@@ -24,7 +24,8 @@
     "mysql": "^2.18.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-star-ratings": "^2.3.0"
+    "react-star-ratings": "^2.3.0",
+    "react-table-v6": "^6.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

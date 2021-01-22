@@ -5,6 +5,7 @@ import css from './App.css';
 import Features from './Features.jsx';
 import TechSpecs from './TechSpecs.jsx';
 import SimilarProducts from './SimilarProducts';
+import SizeTable from './SizeTable.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class App extends React.Component {
           <TechSpecs specs={this.state.specs} style={css}/>
         </div>
         <SimilarProducts products={firstSixProducts} prevSlide={this.prevSlide} nextSlide={this.nextSlide} handleListItemClick={this.handleListItemClick}/>
+        <SizeTable />
       </div>
     );
   }

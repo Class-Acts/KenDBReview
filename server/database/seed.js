@@ -7,7 +7,6 @@ const model = new Model();
 
 model.dropDB()
   .then(() => model.createSchema())
-  // .then(() => pics.getBoots())
   .then(resp => {
     var productsArr = [];
     //create temp variables for the product itself then a random number to be generated for each iteration that will represent the index in the pics array that was returned from the first promise
@@ -51,7 +50,6 @@ model.dropDB()
     };
     nTimes(20, seedFunc);
   })
-  // .then(() => pics.getBackpacks())
   .then(arr => {
     let backpackFunc = (count) => {
       return model.insertBackpacks(backpacks[count]);
