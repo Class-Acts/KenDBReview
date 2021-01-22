@@ -45,7 +45,7 @@ app.get('/photos', (req, res) => {
     .catch(() => {
       res.writeHead(404);
       res.end();
-    })
+    });
 });
 
 app.listen(PORT, () => {
