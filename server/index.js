@@ -2,13 +2,15 @@ const express = require('express');
 const path = require('path');
 const axios = require('axios');
 
-const db = require('./database/products.js');
+const Model = require('./database/model.js');
 
 const app = express();
 const PORT = 8080;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
+
+const db = new Model();
 
 app.get('/products', (req, res) => {
   let products = [];
@@ -23,8 +25,8 @@ app.get('/products', (req, res) => {
         }
       })
       .catch(err => {
-        res.writeHead(404);
-        res.end();
+        res.status(404).end();
+        console.log(err);
       });
 
   };

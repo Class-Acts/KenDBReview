@@ -1,6 +1,5 @@
 const faker = require('faker');
 const Model = require('./model.js');
-const pics = require('./pics');
 const boots = require('../../productPics.json');
 const backpacks = require('../../backpackPicks.json');
 
@@ -8,7 +7,7 @@ const model = new Model();
 
 model.dropDB()
   .then(() => model.createSchema())
-  .then(() => pics.getBoots())
+  // .then(() => pics.getBoots())
   .then(resp => {
     var productsArr = [];
     //create temp variables for the product itself then a random number to be generated for each iteration that will represent the index in the pics array that was returned from the first promise
@@ -23,7 +22,7 @@ model.dropDB()
         rating: Math.floor(Math.random() * (5 - 1 + 1)) + 1,
         price: Math.floor(Math.random() * (200 - 50 + 1)) + 50,
         description: faker.lorem.paragraph(),
-        photo: resp[i],
+        photo: boots[i],
         features: {
           one: faker.lorem.sentences(),
           two: faker.lorem.sentences(),
@@ -52,10 +51,10 @@ model.dropDB()
     };
     nTimes(20, seedFunc);
   })
-  .then(() => pics.getBackpacks())
+  // .then(() => pics.getBackpacks())
   .then(arr => {
     let backpackFunc = (count) => {
-      return model.insertBackpacks(arr[count]);
+      return model.insertBackpacks(backpacks[count]);
     };
     var xTimes = function(count, func) {
       for (var x = 0; count > x; x++) {
@@ -64,5 +63,5 @@ model.dropDB()
     };
     xTimes(18, backpackFunc);
   })
-  .then(() => model.end())
+  // .then(() => model.end())
   .catch(err => console.log(err));
