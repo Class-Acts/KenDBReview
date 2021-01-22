@@ -1,4 +1,5 @@
 const axios = require('axios');
+const fs = require('fs');
 const API_KEY = require('../../pixaBayAPIkey.js');
 
 
@@ -13,7 +14,7 @@ var config = {
   }
 };
 //make axios get request to pixabay for 70 random images of 'boots'. If request is a success the respnse will be an array of object each containing the info for the individual photos. Iterate over that array and for each photo add the thumbnail/"previewURL" url into the picUrls array to be exported for use in seed.js
-module.exports.getBoots = () => {
+getBoots = () => {
   return axios(config)
     .then(resp => {
       let pics = resp.data.hits;
@@ -22,10 +23,17 @@ module.exports.getBoots = () => {
       }
     })
     .then(() => {
-      return picUrls;
+      fs.writeFile('productPics.json', JSON.stringify(picUrls), (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(data)
+        }
+      });
     })
     .catch(err => console.log(err));
 };
+getBoots()
 
 var backpackPicUrls = [];
 var config2 = {
@@ -35,7 +43,7 @@ var config2 = {
     'Cookie': '__cfduid=d6015487e3597264bb5e22389fdf9c6f21608523882; anonymous_user_id=d3fd6b64-2d2b-4719-a3e1-b1afe5107fec; __cf_bm=3e034b692c35b21e9bfa9ddf087b9699ae20d00f-1609211389-1800-AYgFLcix04hhdH+Ako1ZjHDWP2OlJmDlknj0LPr6ExMkvxlZxRJ7v3sMnYoxRzevcdS+jXDb8aEpw+uperII0J4='
   }
 };
-module.exports.getBackpacks = () => {
+getBackpacks = () => {
   return axios(config2)
     .then(resp => {
       let pics = resp.data.hits;
@@ -44,10 +52,15 @@ module.exports.getBackpacks = () => {
       }
     })
     .then(() => {
-      return backpackPicUrls;
+      fs.writeFile('backpackPicks.json', JSON.stringify(backpackPicUrls), (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(data);
+        }
+      });
     })
     .catch(err => console.log(err));
 };
 
-
-module.exports.backpacks = {backpackPicUrls};
+getBackpacks()

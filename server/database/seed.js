@@ -1,6 +1,8 @@
 const faker = require('faker');
 const Model = require('./model.js');
 const pics = require('./pics');
+const boots = require('../../productPics.json');
+const backpacks = require('../../backpackPicks.json');
 
 const model = new Model();
 
@@ -16,8 +18,8 @@ model.dropDB()
     for (let i = 0; i < 20; i++) {
       randomNumber = Math.floor(Math.random() * (20 - 0 + 1)) + 0;
       product = {
-        brand: faker.commerce.productName(),
-        name: faker.company.companyName(),
+        brand: faker.company.companyName(),
+        name: faker.commerce.productName(),
         rating: Math.floor(Math.random() * (5 - 1 + 1)) + 1,
         price: Math.floor(Math.random() * (200 - 50 + 1)) + 50,
         description: faker.lorem.paragraph(),

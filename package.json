@@ -19,6 +19,7 @@
     "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "inherits": "^2.0.4",
     "mysql": "^2.18.1",
     "react": "^17.0.1",
