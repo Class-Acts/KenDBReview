@@ -1,0 +1,144 @@
+.productSizeChart {
+  box-sizing: border-box;
+  display: block;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  float: left;
+  height: 600px;
+  min-width: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  width: 95%;
+}
+
+.title {
+  font-family: Stuart, Georgia, serif;
+  font-size: 18px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  line-height: 28.4329px;
+  text-size-adjust: 100%;
+  color: rgba(12, 11, 8, 0.75);
+  border-bottom-color: rgba(12, 11, 8, 0.75);
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+  border-top-color: rgba(12, 11, 8, 0.75);
+  border-top-style: none;
+  border-top-width: 0px;
+  cursor: auto;
+}
+
+.sizeChartContainer {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  font-family: Graphik, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+  line-height: 21px;
+  text-size-adjust: 100%;
+}
+.tableResponse {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  margin-left: 15px;
+  min-height: 0.01%;
+  overflow-x: auto;
+}
+.table {
+  box-sizing: border-box;
+display: table;
+/* float: left; */
+height: 382.5px;
+margin-bottom: 24px;
+max-width: 100%;
+width: 3052.5px;
+color: rgba(12, 11, 8, 0.75);
+border: 1.5px solid rgb(221, 221, 221);
+  text-align: center;
+  font-size: 16px;
+/* background-color: rgba(0, 0, 0, 0);
+border-bottom-color: rgb(221, 221, 221);
+border-bottom-style: solid;
+border-bottom-width: 1.5px;
+border-image-outset: 0;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(221, 221, 221);
+border-left-style: solid;
+border-left-width: 1.5px;
+border-right-color: rgb(221, 221, 221);
+border-right-style: solid;
+border-right-width: 1.5px;
+border-top-color: rgb(221, 221, 221);
+border-top-style: solid;
+border-top-width: 1.5px;
+border-collapse: collapse;
+-webkit-border-horizontal-spacing: 0px;
+-webkit-border-vertical-spacing: 0px;
+-webkit-font-smoothing: antialiased;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+
+}
+
+/* table, th, td {
+  border: 1.5px solid rgb(221, 221, 221);
+  text-align: center;
+} */
+.rowCol {
+  border: 1.5px solid rgb(221, 221, 221);
+  text-align: center;
+}
+.thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border: 1.5px solid rgb(221, 221, 221);
+  text-align: center;
+}
+.SizeChartHeadder {
+  box-sizing: border-box;
+  display: block;
+  height: 55.9922px;
+  left: 0px;
+  margin-top: -1px;
+  min-width: 160px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: absolute;
+  width: 159.984px;
+  z-index: 1;
+  color: rgba(12, 11, 8, 0.75);
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgb(255, 255, 255);
+  background-image: none;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  /* background-repeat-x
+  background-repeat-y */
+  background-size: auto;
+  border: 1.5px solid rgb(221, 221, 221);
+  text-align: center;
+}
+.th {
+  width: 150px;
+  border: 1.5px solid rgb(221, 221, 221);
+  text-align: center;
+}

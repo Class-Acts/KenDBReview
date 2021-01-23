@@ -11,10 +11,8 @@ model.dropDB()
     var productsArr = [];
     //create temp variables for the product itself then a random number to be generated for each iteration that will represent the index in the pics array that was returned from the first promise
     var product;
-    var randomNumber;
     //iterate from 0 - 99 eachtime creating that products object and populating the properties with random fake data using faker.js library
     for (let i = 0; i < 20; i++) {
-      randomNumber = Math.floor(Math.random() * (20 - 0 + 1)) + 0;
       product = {
         brand: faker.company.companyName(),
         name: faker.commerce.productName(),

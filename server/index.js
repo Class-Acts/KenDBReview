@@ -39,14 +39,14 @@ app.get('/products', (req, res) => {
   // console.log(products);
 
 });
-app.get('/photos', (req, res) => {
-  return db.getPhotos()
+app.get('/boughtTogether', (req, res) => {
+  return db.getBoughtTogther()
     .then(resp => {
       res.send(JSON.stringify(resp[0]));
     })
-    .catch(() => {
-      res.writeHead(404);
-      res.end();
+    .catch((err) => {
+      res.status(404).end();
+      console.log(err);
     });
 });
 
