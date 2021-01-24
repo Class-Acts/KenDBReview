@@ -21,30 +21,49 @@ class Model {
       ))
       .then(() => db.queryAsync(
         `CREATE TABLE features (
-          id int auto_increment primary key,
+          id int,
           feature text,
           prod_id int,
           foreign key(prod_id) references products(id)
         )`
       ))
+      // .then(() => db.queryAsync(
+      //   `CREATE TABLE features (
+      //     id int auto_increment primary key,
+      //     feature text,
+      //     prod_id int,
+      //     foreign key(prod_id) references products(id)
+      //   )`
+      // ))
       .then(() => db.queryAsync(
         `CREATE TABLE backpacks (
           id int auto_increment primary key,
+          brand text,
+          name text,
+          rating int,
+          price int,
           photoURL text
         )`
       ));
   }
-  insert(product) {
+  insertBoots(product) {
     const queryString = `INSERT INTO products (brand, name, rating, price, description, photoURL) VALUES('${product.brand}', '${product.name}', '${product.rating}', '${product.price}', '${product.description}', '${product.photo}')`;
+
     return db.queryAsync(queryString);
   }
-  insertFeatures(obj, id) {
-    const features = `INSERT INTO features (feature, prod_id) VALUES('${obj.one}', '${Number.parseInt(id)}'), ('${obj.two}', '${Number.parseInt(id)}'), ('${obj.three}', '${Number.parseInt(id)}'), ('${obj.four}', '${Number.parseInt(id)}'), ('${obj.five}', '${Number.parseInt(id)}')`;
+  // insertFeatures(obj, id) {
+  //   const features = `INSERT INTO features (feature, prod_id) VALUES('${obj.one}', '${Number.parseInt(id)}'), ('${obj.two}', '${Number.parseInt(id)}'), ('${obj.three}', '${Number.parseInt(id)}'), ('${obj.four}', '${Number.parseInt(id)}'), ('${obj.five}', '${Number.parseInt(id)}')`;
+  //   return db.queryAsync(features);
+  // }
+  insertFeatures(obj) {
+    const features = `INSERT INTO features (feature, prod_id) VALUES('${obj.one}', '${Number.parseInt(obj.id)}'), ('${obj.two}', '${Number.parseInt(obj.id)}'), ('${obj.three}', '${Number.parseInt(obj.id)}'), ('${obj.four}', '${Number.parseInt(obj.id)}'), ('${obj.five}', '${Number.parseInt(obj.id)}')`;
+
     return db.queryAsync(features);
   }
 
   insertBackpacks(item) {
-    const backpackQuery = `INSERT INTO backpacks (photoURL) VALUES('${item}')`;
+    const backpackQuery = `INSERT INTO backpacks (brand, name, rating, price, photoURL) VALUES('${item.brand}', '${item.name}', '${item.rating}', '${item.price}', '${item.photo}')`;
+
     return db.queryAsync(backpackQuery);
   }
 
