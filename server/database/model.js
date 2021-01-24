@@ -94,6 +94,12 @@ class Model {
       .catch(err => console.log(err));
   }
 
+  getAllBoughtTogether() {
+    let queryString = 'SELECT * FROM backpacks LIMIT 12';
+
+    return db.queryAsync(queryString)
+  }
+
   end() {
     return db.endAsync();
   }

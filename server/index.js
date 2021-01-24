@@ -40,7 +40,8 @@ app.get('/products', (req, res) => {
 
 });
 app.get('/boughtTogether', (req, res) => {
-  return db.getBoughtTogther()
+  // console.log
+  db.getAllBoughtTogether()
     .then(resp => {
       res.send(JSON.stringify(resp[0]));
     })
