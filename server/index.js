@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 const db = new Model();
 
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
   let products = [];
   let query = (count) => {
 
@@ -39,7 +39,7 @@ app.get('/products', (req, res) => {
   // console.log(products);
 
 });
-app.get('/boughtTogether', (req, res) => {
+app.get('/api/boughtTogether', (req, res) => {
   // console.log
   db.getAllBoughtTogether()
     .then(resp => {

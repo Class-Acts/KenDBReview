@@ -18,7 +18,7 @@ class BoughtTogether extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
   }
   componentDidMount() {
-    axios.get('/boughtTogether')
+    axios.get('/api/boughtTogether')
       .then((resp) => {
         this.setState({products: resp.data});
       })

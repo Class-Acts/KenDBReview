@@ -21,20 +21,12 @@ class Model {
       ))
       .then(() => db.queryAsync(
         `CREATE TABLE features (
-          id int,
+          id int auto_increment primary key,
           feature text,
           prod_id int,
           foreign key(prod_id) references products(id)
         )`
       ))
-      // .then(() => db.queryAsync(
-      //   `CREATE TABLE features (
-      //     id int auto_increment primary key,
-      //     feature text,
-      //     prod_id int,
-      //     foreign key(prod_id) references products(id)
-      //   )`
-      // ))
       .then(() => db.queryAsync(
         `CREATE TABLE backpacks (
           id int auto_increment primary key,
@@ -46,15 +38,12 @@ class Model {
         )`
       ));
   }
-  insertBoots(product) {
-    const queryString = `INSERT INTO products (brand, name, rating, price, description, photoURL) VALUES('${product.brand}', '${product.name}', '${product.rating}', '${product.price}', '${product.description}', '${product.photo}')`;
+  insertBoots(brand, name, rating, price, description, photo) {
+    let values = [brand, name, rating, price, description, photo];
+    const queryString = 'INSERT INTO products (brand, name, rating, price, description, photoURL) VALUES(?, ?, ?, ?, ?, ?)';
 
-    return db.queryAsync(queryString);
+    return db.queryAsync(queryString, values);
   }
-  // insertFeatures(obj, id) {
-  //   const features = `INSERT INTO features (feature, prod_id) VALUES('${obj.one}', '${Number.parseInt(id)}'), ('${obj.two}', '${Number.parseInt(id)}'), ('${obj.three}', '${Number.parseInt(id)}'), ('${obj.four}', '${Number.parseInt(id)}'), ('${obj.five}', '${Number.parseInt(id)}')`;
-  //   return db.queryAsync(features);
-  // }
   insertFeatures(obj) {
     const features = `INSERT INTO features (feature, prod_id) VALUES('${obj.one}', '${Number.parseInt(obj.id)}'), ('${obj.two}', '${Number.parseInt(obj.id)}'), ('${obj.three}', '${Number.parseInt(obj.id)}'), ('${obj.four}', '${Number.parseInt(obj.id)}'), ('${obj.five}', '${Number.parseInt(obj.id)}')`;
 
@@ -97,7 +86,7 @@ class Model {
   getAllBoughtTogether() {
     let queryString = 'SELECT * FROM backpacks LIMIT 12';
 
-    return db.queryAsync(queryString)
+    return db.queryAsync(queryString);
   }
 
   end() {

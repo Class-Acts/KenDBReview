@@ -22,7 +22,7 @@ class App extends React.Component {
     this.handleListItemClick = this.handleListItemClick.bind(this);
   }
   componentDidMount() {
-    axios.get('/products')
+    axios.get('/api/products')
       .then(axiosResp => {
         this.setState({products: axiosResp.data, description: axiosResp.data[0].description, features: axiosResp.data[0].features});
       })
