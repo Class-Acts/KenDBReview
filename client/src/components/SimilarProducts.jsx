@@ -13,7 +13,7 @@ const SimilarProducts = (props) => {
       <div className={css.listWrapper}>
         <ul className={css.horizontalList}>
           <img src={leftArrow} onClick={props.prevSlide} />
-          {props.products.map(product => <SimilarProductsListItem photoURL={product.photoURL} brand={product.brand} name={product.name} rating={product.rating} price={product.price} description={product.description} features={product.features} handleItemClick={props.handleListItemClick} style={css}/>)}
+          {props.products.map(product => <SimilarProductsListItem key={product.brand} photoURL={product.photoURL} brand={product.brand} name={product.name} rating={product.rating} price={product.price} description={product.description} features={product.features} handleItemClick={props.handleListItemClick} style={css}/>)}
           <img src={rightArrow} onClick={props.nextSlide} />
         </ul>
       </div>

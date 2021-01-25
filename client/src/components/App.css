@@ -83,3 +83,15 @@ td {
   cursor: initial;
   margin: 0 0 1.2rem;
 }
+
+.sizeBoughtTogether {
+  display: flex;
+}
+
+.sizeChart {
+
+}
+
+/* .boughtTogether {
+  display: flex;
+} */
