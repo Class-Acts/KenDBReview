@@ -18,8 +18,6 @@ app.get('/products', (req, res) => {
       .then(data => products.push(data))
       .then(() => {
         if (products.length === 12) {
-          // console.log('ubrivbbviebviuebviebvuiebvujebvjubhe', products);
-          console.log(products);
           res.write(JSON.stringify(products));
           res.end();
         }
@@ -38,6 +36,16 @@ app.get('/products', (req, res) => {
   nTimes(12, query);
   // console.log(products);
 
+});
+app.get('/photos', (req, res) => {
+  return db.getPhotos()
+    .then(resp => {
+      res.send(JSON.stringify(resp[0]));
+    })
+    .catch(() => {
+      res.writeHead(404);
+      res.end();
+    });
 });
 
 app.listen(PORT, () => {

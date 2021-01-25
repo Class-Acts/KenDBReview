@@ -7,7 +7,7 @@ const Features = (props) => {
   return (
     <div className={props.style.features}>
       <h3 className={props.style.featureTitle}>Features</h3>
-      <ul>
+      <ul className={props.style.listWrapper}>
         {props.features.map(feature => <FeaturesItem feature={feature} style={props.style}/>)}
       </ul>
     </div>
