@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "nodemon server",
-    "build": "webpack --env.production",
-    "watch": "webpack --env.development -w",
+    "build": "webpack",
+    "watch": "webpack -w",
     "seed": "node server/database/seed.js"
   },
   "dependencies": {
