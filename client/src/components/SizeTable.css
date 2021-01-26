@@ -59,7 +59,6 @@
 .table {
   box-sizing: border-box;
 display: table;
-/* float: left; */
 height: 382.5px;
 margin-bottom: 24px;
 max-width: 100%;
@@ -68,36 +67,9 @@ color: rgba(12, 11, 8, 0.75);
 border: 1.5px solid rgb(221, 221, 221);
   text-align: center;
   font-size: 16px;
-/* background-color: rgba(0, 0, 0, 0);
-border-bottom-color: rgb(221, 221, 221);
-border-bottom-style: solid;
-border-bottom-width: 1.5px;
-border-image-outset: 0;
-border-image-repeat: stretch;
-border-image-slice: 100%;
-border-image-source: none;
-border-image-width: 1;
-border-left-color: rgb(221, 221, 221);
-border-left-style: solid;
-border-left-width: 1.5px;
-border-right-color: rgb(221, 221, 221);
-border-right-style: solid;
-border-right-width: 1.5px;
-border-top-color: rgb(221, 221, 221);
-border-top-style: solid;
-border-top-width: 1.5px;
-border-collapse: collapse;
--webkit-border-horizontal-spacing: 0px;
--webkit-border-vertical-spacing: 0px;
--webkit-font-smoothing: antialiased;
--webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
 
 }
 
-/* table, th, td {
-  border: 1.5px solid rgb(221, 221, 221);
-  text-align: center;
-} */
 .rowCol {
   border: 1.5px solid rgb(221, 221, 221);
   text-align: center;
@@ -131,8 +103,6 @@ border-collapse: collapse;
   background-origin: padding-box;
   background-position-x: 0%;
   background-position-y: 0%;
-  /* background-repeat-x
-  background-repeat-y */
   background-size: auto;
   border: 1.5px solid rgb(221, 221, 221);
   text-align: center;

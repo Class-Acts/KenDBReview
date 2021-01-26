@@ -1,60 +1,53 @@
 import React from 'react';
 
-// import TechSpecsItem from './TechSpecsItem.jsx';
-
 
 const TechSpecs = (props) => {
-  // console.log(props);
   return (
     <div className={props.style.specs}>
       <h3 className={props.style.specsTitle}>Technical specs</h3>
-      <table>
+      <table className={props.style.specTable}>
         <tr>
-          <th>Best Use</th>
-          <td>Hiking</td>
+          <th className={props.style.specTH}>Best Use</th>
+          <td className={props.style.specTD}>Hiking</td>
         </tr>
         <tr>
-          <th>Footwear Height</th>
-          <td>Over-the-ankle</td>
+          <th className={props.style.specTH}>Footwear Height</th>
+          <td className={props.style.specTD}>Over-the-ankle</td>
         </tr>
         <tr>
-          <th>Footwear Closure</th>
-          <td>Lace-up</td>
+          <th className={props.style.specTH}>Footwear Closure</th>
+          <td className={props.style.specTD}>Lace-up</td>
         </tr>
         <tr>
-          <th>Waterproof</th>
-          <td>Yes</td>
+          <th className={props.style.specTH}>Waterproof</th>
+          <td className={props.style.specTD}>Yes</td>
         </tr>
         <tr>
-          <th>Upper</th>
-          <td>Nubuck leather/textile</td>
+          <th className={props.style.specTH}>Upper</th>
+          <td className={props.style.specTD}>Nubuck leather/textile</td>
         </tr>
         <tr>
-          <th>Midsole</th>
-          <td>Dual density EVA</td>
+          <th className={props.style.specTH}>Midsole</th>
+          <td className={props.style.specTD}>Dual density EVA</td>
         </tr>
         <tr>
-          <th>Support</th>
-          <td>4D Advanced Chassis</td>
+          <th className={props.style.specTH}>Support</th>
+          <td className={props.style.specTD}>4D Advanced Chassis</td>
         </tr>
         <tr>
-          <th>Outsole</th>
-          <td>Contagrip rubber</td>
+          <th className={props.style.specTH}>Outsole</th>
+          <td className={props.style.specTD}>Contagrip rubber</td>
         </tr>
         <tr>
-          <th>Weight(Pair)</th>
-          <td>2lbs. 13.2 oz.</td>
+          <th className={props.style.specTH}>Weight(Pair)</th>
+          <td className={props.style.specTD}>2lbs. 13.2 oz.</td>
         </tr>
         <tr>
-          <th>Gender</th>
-          <td>Unisex</td>
+          <th className={props.style.specTH}>Gender</th>
+          <td className={props.style.specTD}>Unisex</td>
         </tr>
       </table>
     </div>
   );
 };
 export default TechSpecs;
-
-{/* <ul>
-        {props.features.map(feature => <FeaturesItem feature={feature} style={props.style}/>)}
-      </ul> */}

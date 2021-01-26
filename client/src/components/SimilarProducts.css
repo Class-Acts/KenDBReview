@@ -49,13 +49,8 @@
 }
 
 
-img {
+.buttonImg {
   width: 50px;
   height: 50px;
-  /* margin-top: 100px; */
   padding-right: 30px;
-  /* display: flex;
-
-
-  align-content: center; */
 }

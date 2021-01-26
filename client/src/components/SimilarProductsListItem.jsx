@@ -16,7 +16,7 @@ class SimilarProductsListItem extends React.Component {
       <li className={css.listItem} >
         <div className={css.itemDiv} onClick={this.props.handleItemClick} >
 
-          <img src={this.props.photoURL} description={this.props.description} features={[this.props.features]}/>
+          <img src={this.props.photoURL} description={this.props.description} features={[this.props.features]} className={css.carouselImg}/>
           <div className={css.brand}>{this.props.brand}</div>
           <div className={css.name}>{this.props.name}</div>
           <StarRatings
