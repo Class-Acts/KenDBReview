@@ -15,7 +15,7 @@ class BoughtTogetherItem extends React.Component {
     return (
       <li className={css.BTlistItem} >
         <div className={css.BTitemDiv} >
-          <img src={this.props.photoURL} />
+          <img src={this.props.photoURL} className={css.boughtTogetherImg}/>
           <div className={css.BTbrand}>{this.props.brand}</div>
           <div className={css.BTname}>{this.props.name}</div>
           <StarRatings
