@@ -1,16 +1,19 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
+const cors = require('cors');
 
 const Model = require('./database/model.js');
 
 const app = express();
 const PORT = 8080;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 const db = new Model();
+
 
 app.get('/api/products', (req, res) => {
   let products = [];
