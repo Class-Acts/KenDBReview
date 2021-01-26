@@ -8,12 +8,4 @@ var connection = mysql.createConnection({
 });
 const db = Promise.promisifyAll(connection, { multiArgs: true });
 
-db.connectAsync()
-  .then(result => {
-    console.log('Connected to mySQL');
-  })
-  .catch(err => {
-    console.log(err);
-  });
-
 module.exports = db;

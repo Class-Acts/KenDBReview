@@ -14,6 +14,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 const db = new Model();
 
+db.connect()
+  .then(() => db.useDb());
 
 app.get('/api/products', (req, res) => {
   let products = [];
