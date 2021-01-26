@@ -51,9 +51,9 @@ class BoughtTogether extends React.Component {
         <h3 className={css.boughtTogetherTitle}>Frequently Bought Together</h3>
         <div className={css.BTlistWrapper}>
           <ul className={css.BThorizontalList}>
-            <img src={leftArrow} onClick={this.prevSlide} />
+            <img src={leftArrow} onClick={this.prevSlide} className={css.boughtTogetherButton}/>
             {firstSixProducts.map(product => <BoughtTogetherItem key={product.brand} photoURL={product.photoURL} brand={product.brand} name={product.name} rating={product.rating} price={product.price} style={css}/>)}
-            <img src={rightArrow} onClick={this.nextSlide} />
+            <img src={rightArrow} onClick={this.nextSlide} className={css.boughtTogetherButton}/>
           </ul>
         </div>
       </div>
