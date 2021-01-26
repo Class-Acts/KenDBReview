@@ -2,7 +2,7 @@ const db = require('./index');
 
 class Model {
   dropDB() {
-    return db.queryAsync('DROP DATABASE rgi');
+    return db.queryAsync('DROP DATABASE IF EXISTS rgi');
   }
 
   createSchema() {
@@ -38,6 +38,21 @@ class Model {
         )`
       ));
   }
+
+  connect() {
+    return db.connectAsync()
+      .then(result => {
+        console.log('Connected to mySQL');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  useDb() {
+    return db.queryAsync('USE rgi');
+  }
+
   insertBoots(brand, name, rating, price, description, photo) {
     let values = [brand, name, rating, price, description, photo];
     const queryString = 'INSERT INTO products (brand, name, rating, price, description, photoURL) VALUES(?, ?, ?, ?, ?, ?)';
