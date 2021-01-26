@@ -1,3 +1,12 @@
+.appWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.appContainer {
+  max-width: 80%;
+}
+
 .description {
   display: block;
   margin-block-start: 1em;

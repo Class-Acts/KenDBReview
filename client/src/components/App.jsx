@@ -56,18 +56,20 @@ class App extends React.Component {
       firstSixProducts = firstSixProducts.concat(this.state.products.slice(0, 6 - firstSixProducts.length));
     }
     return (
-      <div>
-        <p className={css.description}>{this.state.description}</p>
-        <div className={css.features_specs}>
-          <Features features={this.state.features} style={css}/>
-          <TechSpecs specs={this.state.specs} style={css}/>
-        </div>
-        <SimilarProducts products={firstSixProducts} prevSlide={this.prevSlide} nextSlide={this.nextSlide} handleListItemClick={this.handleListItemClick}/>
-        <div className={css.sizeBoughtTogether}>
-          <SizeTable />
-        </div>
-        <div className={css.boughtTogether}>
-          <BoughtTogether/>
+      <div className={css.appWrapper}>
+        <div className={css.appContainer}>
+          <p className={css.description}>{this.state.description}</p>
+          <div className={css.features_specs}>
+            <Features features={this.state.features} style={css}/>
+            <TechSpecs specs={this.state.specs} style={css}/>
+          </div>
+          <SimilarProducts products={firstSixProducts} prevSlide={this.prevSlide} nextSlide={this.nextSlide} handleListItemClick={this.handleListItemClick}/>
+          <div className={css.sizeBoughtTogether}>
+            <SizeTable />
+          </div>
+          <div className={css.boughtTogether}>
+            <BoughtTogether/>
+          </div>
         </div>
       </div>
     );
