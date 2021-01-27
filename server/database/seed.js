@@ -72,7 +72,7 @@ const addFeatures = (features) => {
 const addBackpacks = (backpacks) => {
   let bagInserts = [];
   for (let bag of backpacks) {
-    bagInserts.push(model.insertBackpacks(bag));
+    bagInserts.push(model.insertBackpacks(bag.brand, bag.name, bag.rating, bag.price, bag.photo));
   }
   return Promise.all(bagInserts);
 };

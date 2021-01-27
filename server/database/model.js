@@ -65,10 +65,11 @@ class Model {
     return db.queryAsync(features);
   }
 
-  insertBackpacks(item) {
-    const backpackQuery = `INSERT INTO backpacks (brand, name, rating, price, photoURL) VALUES('${item.brand}', '${item.name}', '${item.rating}', '${item.price}', '${item.photo}')`;
+  insertBackpacks(brand, name, rating, price, photo) {
+    let values = [brand, name, rating, price, photo];
+    const backpackQuery = 'INSERT INTO backpacks (brand, name, rating, price, photoURL) VALUES(?, ?, ?, ?, ?)';
 
-    return db.queryAsync(backpackQuery);
+    return db.queryAsync(backpackQuery, values);
   }
 
   getAll(id) {
