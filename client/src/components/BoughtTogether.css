@@ -21,7 +21,6 @@
   /* box-sizing: border-box; */
   color: rgba(12, 11, 8, 0.75);
   display: block;
-  /* justify-content: space-between; */
   font-family: Graphik, "Helvetica Neue", sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -32,23 +31,17 @@
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
-  /* text-size-adjust: 100; */
-  /* width: 1500px; */
-  /* margin: 0 auto; */
 }
 .BThorizontalList {
   box-sizing: border-box;
   display: flex;
   height: 326.479px;
   margin-bottom: 0px;
-  /* margin-left: 12%; */
   margin-right: 0px;
   margin-top: 0px;
   overflow-x: hidden;
   overflow-y: hidden;
   padding-bottom: 0px;
-  /* padding-left: auto;
-  padding-right: auto; */
   padding-top: 0px;
   align-items: baseline;
 }
