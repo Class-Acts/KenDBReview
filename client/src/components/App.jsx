@@ -59,9 +59,11 @@ class App extends React.Component {
       <div className={css.appWrapper}>
         <div className={css.appContainer}>
           <p className={css.description}>{this.state.description}</p>
-          <div className={css.features_specs}>
-            <Features features={this.state.features} style={css}/>
-            <TechSpecs specs={this.state.specs} style={css}/>
+          <div className={css.featSpecFlex}>
+            <div className={css.features_specs}>
+              <Features features={this.state.features} style={css}/>
+              <TechSpecs specs={this.state.specs} style={css}/>
+            </div>
           </div>
           <SimilarProducts products={firstSixProducts} prevSlide={this.prevSlide} nextSlide={this.nextSlide} handleListItemClick={this.handleListItemClick}/>
           <div className={css.sizeBoughtTogether}>
