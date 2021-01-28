@@ -28,7 +28,11 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
+.featSpecFlex {
+  display: flex;
+  justify-content: center;
+  padding-right: 25px;
+}
 .features_specs {
   display: grid;
   grid-template-columns: 50% 50%;
