@@ -4,7 +4,7 @@ const boots = require('../../productPics.json');
 const backpacks = require('../../backpackPicks.json');
 
 const model = new Model();
-const num = 19;
+const num = 18;
 
 const generateBoots = (numBoots) => {
   var productsArr = [];
