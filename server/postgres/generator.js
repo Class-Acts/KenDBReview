@@ -3,7 +3,6 @@ const faker = require('faker');
 const argv = require('yargs').argv;
 
 const lines = argv.lines || 1000;
-const filename = argv.output || 'products.csv';
 const writeStream = fs.createWriteStream;
 
 const departments = [

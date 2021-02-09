@@ -16,12 +16,16 @@ review            numeric(2,1),
 photo_url         TEXT
 );
 
+CREATE INDEX product_id_index ON products (id);
+
 DROP TABLE IF EXISTS features;
 CREATE TABLE features (
 id                serial PRIMARY KEY,
 product_id        integer,
 feature           TEXT
 );
+
+CREATE INDEX feature_product_id_index ON feature (product_id);
 
 DROP TABLE IF EXISTS sizes;
 CREATE TABLE sizes (
@@ -41,3 +45,6 @@ department        TEXT,
 product_id        integer,
 bought_together   integer
 );
+
+CREATE INDEX bt_product_id_index ON bought_together (product_id);
+CREATE INDEX bought_together_index ON bought_together (bought_together);

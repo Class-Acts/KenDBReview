@@ -43,7 +43,7 @@ pool.connect()
         console.error(err);
       })
       .finally(() => {
-        client.release();
+        client.end();
         console.log('copy complete');
       });
   });
