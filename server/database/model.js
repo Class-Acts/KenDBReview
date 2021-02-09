@@ -2,12 +2,12 @@ const db = require('./index');
 
 class Model {
   dropDB() {
-    return db.queryAsync('DROP DATABASE IF EXISTS rgi');
+    return db.queryAsync('DROP DATABASE IF EXISTS SDC');
   }
 
   createSchema() {
-    return db.queryAsync('CREATE DATABASE IF NOT EXISTS rgi')
-      .then(() => db.queryAsync('USE rgi'))
+    return db.queryAsync('CREATE DATABASE IF NOT EXISTS SDC')
+      .then(() => db.queryAsync('USE SDC'))
       .then(() => db.queryAsync(
         `CREATE TABLE products (
           id int auto_increment primary key,
@@ -50,7 +50,7 @@ class Model {
   }
 
   useDb() {
-    return db.queryAsync('USE rgi');
+    return db.queryAsync('USE SDC');
   }
 
   insertBoots(brand, name, rating, price, description, photo) {
