@@ -9,7 +9,7 @@ const pool = new Pool ({
 
 const copyProducts = "COPY products(department, product_category, brand, product_name, description, price, review, photo_url) FROM '/Users/KenSakama/HackReactor/KenDBReview/server/postgres/CSV/products.csv' DELIMITER ',' CSV HEADER;";
 
-const copyFeatures = "COPY features(product_id, feature) FROM '/Users/KenSakama/HackReactor/KenDBReview/server/postgres/CSV/features.csv' DELIMITER ',' CSV HEADER;";
+const copyFeatures = "COPY features(product_id, feature0, feature1, feature2, feature3, feature4) FROM '/Users/KenSakama/HackReactor/KenDBReview/server/postgres/CSV/features.csv' DELIMITER ',' CSV HEADER;";
 
 const copyBoughtTogether = "COPY bought_together(department, product_id, bought_together) FROM '/Users/KenSakama/HackReactor/KenDBReview/server/postgres/CSV/boughtTogether.csv' DELIMITER ',' CSV HEADER;";
 

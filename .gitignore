@@ -25,6 +25,7 @@ coverage
 build/
 dist/
 pixaBayAPIkey.js
+app.js
 
 #AWS key
 *.pem

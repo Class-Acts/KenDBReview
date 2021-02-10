@@ -3,7 +3,12 @@ const path = require('path');
 const axios = require('axios');
 const cors = require('cors');
 
-const Model = require('./database/model.js');
+// const Model = require('./database/model.js');
+const { getProduct, getSimilarItems } = require('./postgres/index-pg.js');
+// const db = new Model();
+
+// db.connect()
+//   .then(() => db.useDb());
 
 const app = express();
 const PORT = 8080;
@@ -12,48 +17,44 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-const db = new Model();
-
-db.connect()
-  .then(() => db.useDb());
-
-app.get('/api/products', (req, res) => {
+app.get('/api/products/:index', (req, res) => {
   let products = [];
-  let query = (count) => {
+  let index = req.params.index;
+  console.log(index);
 
-    return db.getAll(count)
-      .then(data => products.push(data))
-      .then(() => {
-        if (products.length === 12) {
-          res.write(JSON.stringify(products));
-          res.end();
-        }
-      })
-      .catch(err => {
-        res.status(404).end();
-        console.log(err);
-      });
-
-  };
-  var nTimes = function(count, func) {
-    for (var x = 0; count > x; x++) {
-      func(x + 1);
-    }
-  };
-  nTimes(12, query);
-  // console.log(products);
+  getProduct(index)
+    .then((products) => {
+      console.log('from index.js', products);
+      res.write(JSON.stringify(products));
+      res.end();
+    })
+    .catch(err => {
+      res.status(404).end();
+      console.log(err);
+    });
 
 });
+
 app.get('/api/boughtTogether', (req, res) => {
   // console.log
-  db.getAllBoughtTogether()
+  getSimilarItems()
     .then(resp => {
-      res.send(JSON.stringify(resp[0]));
+      res.send(JSON.stringify(resp));
     })
     .catch((err) => {
       res.status(404).end();
       console.log(err);
     });
+
+  // db.getAllBoughtTogether()
+  //   .then(resp => {
+  //     res.send(JSON.stringify(resp[0]));
+  //   })
+  //   .catch((err) => {
+  //     res.status(404).end();
+  //     console.log(err);
+  //   });
+
 });
 
 app.listen(PORT, () => {

@@ -38,8 +38,12 @@ const seedProduct = () => {
 
 const seedDataFeatures = (num) => {
   let productId = num;
-  let feature = faker.lorem.sentence();
-  return `${productId}, "${feature}"\n`;
+  let feature0 = faker.commerce.productAdjective();
+  let feature1 = faker.commerce.productAdjective();
+  let feature2 = faker.commerce.productAdjective();
+  let feature3 = faker.commerce.productAdjective();
+  let feature4 = faker.commerce.productAdjective();
+  return `${productId}, ${feature0}, ${feature1}, ${feature2}, ${feature3}, ${feature4}\n`;
 };
 
 const seedDataBoughtTogether = (num) => {
@@ -72,7 +76,7 @@ const startWriting = (writeStream, encoding, data, callback) => {
 
 
 const dataSeeding = () => {
-  const writeStream = fs.createWriteStream('./csv/products.csv');
+  const writeStream = fs.createWriteStream(`${__dirname}/CSV/products.csv`);
   console.time('working on products.csv');
   writeStream.write(
     'department, product_category, brand, product_name, description, price, review, photo_url\n',
@@ -80,15 +84,15 @@ const dataSeeding = () => {
   );
   startWriting(writeStream, 'utf-8', seedProduct, () => {
     console.timeEnd('working on products.csv');
-    const writeStream = fs.createWriteStream('./csv/features.csv');
+    const writeStream = fs.createWriteStream(`${__dirname}/CSV/features.csv`);
     console.time('working on features.csv');
     writeStream.write(
-      'product_id, feature\n',
+      'product_id, feature0, feature1, feature2, feature3, feature4\n',
       'utf-8'
     );
     startWriting(writeStream, 'utf-8', seedDataFeatures, () => {
       console.timeEnd('working on features.csv');
-      const writeStream = fs.createWriteStream('./csv/boughtTogether.csv');
+      const writeStream = fs.createWriteStream(`${__dirname}/CSV/boughtTogether.csv`);
       console.time('working on bought_together.csv');
       writeStream.write(
         'department, product_id, bought_together\n',
@@ -102,6 +106,14 @@ const dataSeeding = () => {
   });
 };
 
-dataSeeding();
+
+fs.appendFile(`${__dirname}/CSV/products.csv`, '', () => {
+  fs.appendFile(`${__dirname}/CSV/features.csv`, '', () => {
+    fs.appendFile(`${__dirname}/CSV/boughtTogether.csv`, '', () => {
+      console.log('csv files created. data generating is started');
+      dataSeeding();
+    });
+  });
+});
 
 

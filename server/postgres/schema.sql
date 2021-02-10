@@ -22,10 +22,14 @@ DROP TABLE IF EXISTS features;
 CREATE TABLE features (
 id                serial PRIMARY KEY,
 product_id        integer,
-feature           TEXT
+feature0           TEXT,
+feature1           TEXT,
+feature2           TEXT,
+feature3           TEXT,
+feature4           TEXT
 );
 
-CREATE INDEX feature_product_id_index ON feature (product_id);
+CREATE INDEX feature_product_id_index ON features (product_id);
 
 DROP TABLE IF EXISTS sizes;
 CREATE TABLE sizes (
