@@ -39,7 +39,6 @@ class BoughtTogether extends React.Component {
     this.setState({currentProductIndex: index});
   }
 
-
   render() {
     const index = this.state.currentProductIndex;
     let firstSixProducts = this.state.products.slice(index, index + 6);

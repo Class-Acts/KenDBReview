@@ -11,7 +11,6 @@ class BoughtTogetherItem extends React.Component {
     };
   }
   render() {
-
     return (
       <li className={css.BTlistItem} >
         <div className={css.BTitemDiv} >
@@ -25,7 +24,7 @@ class BoughtTogetherItem extends React.Component {
             starDimension="15px"
             starsSpacing="0px"
           />
-          <div>${this.props.price}.99</div>
+          <div>${Number(this.props.price)}.99</div>
         </div>
       </li>
 

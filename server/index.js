@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
@@ -20,11 +21,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.get('/api/products/:index', (req, res) => {
   let products = [];
   let index = req.params.index;
-  console.log(index);
 
   getProduct(index)
     .then((products) => {
-      console.log('from index.js', products);
       res.write(JSON.stringify(products));
       res.end();
     })
@@ -32,7 +31,6 @@ app.get('/api/products/:index', (req, res) => {
       res.status(404).end();
       console.log(err);
     });
-
 });
 
 app.get('/api/boughtTogether', (req, res) => {

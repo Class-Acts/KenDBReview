@@ -23,10 +23,14 @@ class App extends React.Component {
   }
   componentDidMount() {
     let random = Math.floor((Math.random() * 1000 - 1) + 1);
-    debugger;
     axios.get(`http://localhost:8080/api/products/${random}`)
       .then(axiosResp => {
-        this.setState({products: axiosResp.data, description: axiosResp.data[0].description, features: axiosResp.data[0].features});
+        console.log(axiosResp);
+        this.setState({
+          products: axiosResp.data,
+          description: axiosResp.data[0].description,
+          features: axiosResp.data[0].features
+        });
       })
       .catch(err => console.log(err));
   }
@@ -53,7 +57,7 @@ class App extends React.Component {
 
   render() {
     const index = this.state.currentProductIndex;
-    let firstSixProducts = this.state.products.slice(index, index + 6);
+    let firstSixProducts = this.state.products.slice(index, index + 6)
     if (firstSixProducts.length < 6) {
       firstSixProducts = firstSixProducts.concat(this.state.products.slice(0, 6 - firstSixProducts.length));
     }
@@ -81,3 +85,4 @@ class App extends React.Component {
 }
 
 export default App;
+

@@ -27,5 +27,8 @@ dist/
 pixaBayAPIkey.js
 app.js
 
+#new relic
+newrelic.js
+
 #AWS key
 *.pem

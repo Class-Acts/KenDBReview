@@ -26,7 +26,7 @@ class SimilarProductsListItem extends React.Component {
             starDimension="15px"
             starsSpacing="0px"
           />
-          <div>${this.props.price}.00</div>
+          <div>${Number(this.props.price)}.00</div>
         </div>
       </li>
 

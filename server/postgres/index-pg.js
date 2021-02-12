@@ -30,17 +30,17 @@ const getProduct = (id) => {
         WHERE products.id BETWEEN ${low} AND ${high}
         LIMIT 12;
         `;
-        // console.time('select similar detail query');
+        console.time('select similar detail query');
         return client
           .query(text)
           .then((resp) => {
-            // console.timeEnd('select similar detail query');
+            console.timeEnd('select similar detail query');
             for (let i = 0; i < resp.rows.length; i++) {
               let product = {id: '', brand: '', name: '', rating: '', price: '', description: '', photoURL: '', features: []};
               product.id = resp.rows[i].id;
               product.brand = resp.rows[i].brand;
               product.name = resp.rows[i].product_name;
-              product.rating = resp.rows[i].review;
+              product.rating = Math.floor(resp.rows[i].review);
               product.price = resp.rows[i].price;
               product.description = resp.rows[i].description;
               product.photoURL = resp.rows[i].photo_url;
